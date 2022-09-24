@@ -1,29 +1,32 @@
 "# ITCModUSG" 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2022, Khorshidi et al. (2022)                             %
+% All rights reserved. Please read the "license.txt" for license terms.   %
+%                                                                         %
+% Project Code: ITCModUSG                                                 %
+% Project Title: Information Theory Diagnostic Calibration of MODFLOW-USG %
+% Publisher: Khorshidi et al. (2022)                                      %
+%                                                                         %
+% Developer: Mohammad Sadegh Khorshidi                                    %
+%                                                                         %
+% Contact Info: msadegh.khorshidi.ak@gmail.com                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-Copyright (c) 2022, Mohammad Sadegh Khorshidi
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-	  
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in
-      the documentation and/or other materials provided with the distribution
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
+Instructions:
+The first step requires the user to develop the case study’s hydro-geological 
+model using MODFLOW-USG and place the native text files in “00. Modflow USG Files” 
+folder of the software. Then, three excel files are required to prepare as inputs 
+for the program. In “01. Hydrodynamic properties RANGE.xlsx” spreadsheet, the 
+minimum, maximum and average values for any given hydro-geologic transport 
+parameters should be determined. In order to make the input parameters detectable 
+for ITCModUSG, unique (and preferably negative) values for transport parameters 
+should be used in the development of the native MODFLOW-USG model, while those 
+unique values should be entered in “02. Negative Values.xlsx” spreadsheet 
+correspondingly. The Cell IDs of the observation wells and the observed heads 
+should be entered into the “03. Observation Wells.xlsx” spreadsheet. One last 
+step before the execution of ITCModUSG is to impose parameters’ constraints. 
+To do so, “If_Clause.m” should be modified. By “ITCModUSG_Script.m”, first the 
+program executes its Latin Hypercube Sampling module.  Then, it reads and prepares 
+the necessary input parameters for the connection of MODFLOW to MATLAB®. Finally, 
+the program executes the NSGA-II optimization module to obtain a set of paramters.
