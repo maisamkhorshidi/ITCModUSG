@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2022, Khorshidi et al. (2022)                             %
+% All rights reserved. Please read the "license.txt" for license terms.   %
+%                                                                         %
+% Project Code: ITCModUSG                                                 %
+% Project Title: Information Theory Diagnostic Calibration of MODFLOW-USG %
+% Publisher: Khorshidi et al. (2022)                                      %
+%                                                                         %
+% Developer: Mohammad Sadegh Khorshidi                                    %
+%                                                                         %
+% Contact Info: msadegh.khorshidi.ak@gmail.com                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [y,simcal,simall,simobs,mi,vi,pen,param]=fittness(x,indexi,indexj,...
     lpfd1,lpfh1,fileinput,fileoutput,obsh,obsind,well_row,well_col,...
     obsnum,numb,hclb,fldt,fldop,fileexe)
@@ -118,23 +130,14 @@ for iii=1:size(param,1)
     else
         %% Reading Results
         result = import_result([fldt '\' fileoutput]);
-        indw=zeros(size(obsh,1),1);
         simall{iii}=zeros(size(obsnum));
-        for j=1:size(result,1)
-            if ismissing(result(j,1))
-                continue
-            else
-                for w=1:numel(well_row)
-                    wr=well_row{w};
-                    wc=well_col{w};
-                    if strcmp(result{j,1},wr)
-                        indw(w)=indw(w)+1;
-                        if str2double(result(j,wc+1))==-888
-                            simall{iii}(w,indw(w))=nan;
-                        else
-                            simall{iii}(w,indw(w))=str2double(result(j,wc+1));
-                        end
-                    end
+        for j=1:numel(well_col)
+            for kk=1:numel(well_col{j})
+                aa=str2double(char(result(well_row{j}(kk),well_col{j}(kk))));
+                if aa==-888
+                    simall{iii}(j,kk)=nan;
+                else
+                    simall{iii}(j,kk)=aa;
                 end
             end
         end

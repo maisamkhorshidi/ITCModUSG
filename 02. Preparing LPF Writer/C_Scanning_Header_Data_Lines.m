@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2022, Khorshidi et al. (2022)                             %
+% All rights reserved. Please read the "license.txt" for license terms.   %
+%                                                                         %
+% Project Code: ITCModUSG                                                 %
+% Project Title: Information Theory Diagnostic Calibration of MODFLOW-USG %
+% Publisher: Khorshidi et al. (2022)                                      %
+%                                                                         %
+% Developer: Mohammad Sadegh Khorshidi                                    %
+%                                                                         %
+% Contact Info: msadegh.khorshidi.ak@gmail.com                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function ss=C_Scanning_Header_Data_Lines(fldr,fldm)
 %% Some Folder Movements
 if exist([fldr '\Results\C_Scanning_Header_Data_Lines.mat'],'file')

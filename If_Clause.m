@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2022, Khorshidi et al. (2022)                             %
+% All rights reserved. Please read the "license.txt" for license terms.   %
+%                                                                         %
+% Project Code: ITCModUSG                                                 %
+% Project Title: Information Theory Diagnostic Calibration of MODFLOW-USG %
+% Publisher: Khorshidi et al. (2022)                                      %
+%                                                                         %
+% Developer: Mohammad Sadegh Khorshidi                                    %
+%                                                                         %
+% Contact Info: msadegh.khorshidi.ak@gmail.com                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function y=If_Clause(cc)
 if sum(min(cc(1:4))>=cc(5))==1 && sum(max(cc(6:8))<=cc(5))==1 && sum(min(cc(6:8))>=max(cc(13:14)))==1 &&...
         sum(min(cc(13:14))>=max(cc(9:10)))==1 && sum(min(cc(9:10))>=max(cc(11:12)))==1 &&...

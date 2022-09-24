@@ -1,3 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2022, Khorshidi et al. (2022)                             %
+% All rights reserved. Please read the "license.txt" for license terms.   %
+%                                                                         %
+% Project Code: ITCModUSG                                                 %
+% Project Title: Information Theory Diagnostic Calibration of MODFLOW-USG %
+% Publisher: Khorshidi et al. (2022)                                      %
+%                                                                         %
+% Developer: Mohammad Sadegh Khorshidi                                    %
+%                                                                         %
+% Contact Info: msadegh.khorshidi.ak@gmail.com                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function ss=NSGAII(Npop,NumGen,Nbin,fldr,fldm,fldt,fldop)
 %% Inputs
 % npop=1;
